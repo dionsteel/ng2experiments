@@ -1,0 +1,8 @@
+<md-grid-list *ngIf="tiles" [cols]="cols" [rowHeight]="rowHeight"> 
+	<md-grid-tile *ngFor="let item of tiles" [rowspan]="item.rows" [colspan]="item.cols" [style.background]="item.color">
+		<div *ngIf="item && item.value">{{item.text}} <br/>
+		<i>{{item.value}}</i>
+		</div>
+		<div>children:<app-relative-grid [data]="item.children"></app-relative-grid></div>
+	</md-grid-tile>
+</md-grid-list>
